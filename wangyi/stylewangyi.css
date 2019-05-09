@@ -1,0 +1,955 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input,
+button {
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+}
+
+.top {
+    font-size: 14px;
+    background: #242424;
+    height: 70px;
+}
+
+.top .wrap {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.top .bg {
+    background-image: url(img/topbar.png);
+    background-repeat: no-repeat;
+}
+
+.top a {
+    color: #ccc;
+}
+
+.top h1 a {
+    display: block;
+    text-indent: -9999px;
+    background-position: 0 0;
+    width: 169px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+.top-nav {
+    display: flex;
+}
+
+.top-nav a {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+}
+
+.top-nav .fst {
+    background: #000;
+    overflow: hidden;
+}
+
+.top .fst a {
+    position: relative;
+
+}
+
+.top .fst a:after {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 6px;
+    background: red;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 0;
+    background: url(img/topbar.png) no-repeat right 0;
+    /*a后面跟的小三角*/
+}
+
+.top-nav a:hover {
+    background: #000;
+}
+
+.top a:hover {
+    color: #fff;
+}
+
+.top-nav sup.bg {
+    width: 30px;
+    height: 20px;
+    background-position: -190px 0;
+    margin-left: 10px;
+}
+
+.right-infor {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    /*从结尾处定位*/
+    font-size: 12px;
+}
+
+.top-search {
+    display: flex;
+    /*同级元素使用zindex,只有在父元素display=flex或者父元素position=absolute时，目标元素的zindex才会生效*/
+    align-items: center;
+}
+
+.top-search .icon-search {
+    font-size: 16px;
+    color: #555;
+    ;
+    margin-right: -22px;
+    z-index: 999;
+}
+
+.top-search input {
+    width: 150px;
+    font-size: 12px;
+    z-index: 9;
+    padding-left: 30px;
+}
+
+.top-btn {
+    padding: 6px 0;
+    border-radius: 16px;
+}
+
+.right-infor .writer {
+    border: 1px solid #555;
+    padding: 6px 16px;
+    margin: 0 10px;
+}
+
+.right-infor .login {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100px;
+}
+
+.login .login-btn {
+    height: 70px;
+    width: 100px;
+    line-height: 70px;
+    /*行高=height,可以将文字居中*/
+}
+
+.login .login-btn:hover {
+    text-decoration: underline;
+}
+
+.login .login-flag {
+    position: absolute;
+    margin-top: 70px;
+    left: -60px;
+    width: 158px;
+    background: #2b2b2b;
+    border: 1px solid #202020;
+    box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 4px;
+    display: none;
+    z-index: 1000;
+}
+
+.login-flag a {
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid rgba(78, 75, 75, 0.267)
+}
+
+.login-flag a:hover .iconfont {
+    color: #ccc;
+}
+
+.login-flag a:hover {
+    background: rgb(58, 57, 57);
+}
+
+.login-flag .iconfont {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+/*------header---------------*/
+
+.top-nav2 {
+    background: #C20C0C;
+    height: 35px;
+    font-size: 12px;
+}
+
+.top-nav2 .wrap {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.top-nav2 .wrap ul {
+    display: flex;
+    margin-left: 180px;
+
+}
+
+.top-nav2 a {
+    color: #fff;
+    line-height: 35px;
+    /*lineheight = height,文字居中*/
+    padding: 0 26px;
+
+}
+
+.top-nav2 a span {
+    padding: 4px 6px;
+    border-radius: 5px;
+}
+
+.top-nav2 a:hover span,
+.top-nav2 .fst {
+    background: #9B0909;
+}
+
+/*----nav--*/
+
+.banner {
+    background-image: url(img/1.jpg);
+    background-repeat: repeat;
+    background-position: 0 0;
+    z-index: 88;
+}
+
+.banner .wrap {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 336px;
+    justify-content: center;
+}
+
+.outer {
+    position: relative;
+    width: 730px;
+    height: 336px;
+}
+
+.outer .gallery {
+    height: 336px;
+    width: 730px;
+    position: relative;
+
+}
+
+.gallery li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.banner .iconfont {
+    font-size: 30px;
+    color: #fff;
+    opacity: 0.6;
+    padding: 12px 3px;
+    cursor: pointer;
+}
+
+.banner .iconfont:hover {
+    background: #555;
+}
+
+.banner .icon-arrow-left {
+    margin-right: 20px;
+}
+
+.banner .icon-arrow-right {
+    margin-left: 20px;
+}
+
+.mid {
+    display: flex;
+    width: 980px;
+}
+
+.outer .num {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    /*首先把父元素在父元素的父元素位置水平居中，再把子元素在父元素水平居中*/
+}
+
+.outer .num span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+    /*如果不加这句，span原点不显示*/
+    opacity: 0.7;
+}
+
+.outer .num li {
+    cursor: pointer;
+    padding: 2px 12px;
+}
+
+.outer li.current span {
+    background: red;
+}
+
+.gallery .current {
+    opacity: 1;
+}
+
+.outer img {
+    width: 730px;
+    height: 336px;
+}
+
+.banner .download {
+    width: 250px;
+    height: 336px;
+    background: url(img/download.png) 0 0 no-repeat;
+}
+
+.banner .download img {
+    width: 250px;
+}
+
+
+.download {
+    color: rgb(136, 133, 133);
+    font-size: 12px;
+    position: relative;
+}
+
+.download span {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.ban2 {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid #d3d3d3;
+    border-width: 0 1px;
+}
+
+.ban2 .hd a.title {
+    color: #666;
+}
+
+.ban2 .hd1 {
+    height: 33px;
+    line-height: 33px;
+    border-bottom: 2px solid #C10D0C;
+    background-position: -225px -156px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.ban2 a {
+    font-size: 12px;
+    color: #000;
+}
+
+.ban2 a:hover {
+    text-decoration: underline;
+}
+
+.module .title {
+    font-size: 20px;
+    color: #333;
+    margin: 0 10px 0 40px;
+}
+
+.module .title:hover {
+    text-decoration: none;
+}
+
+.ban2 .tab {
+    display: flex;
+}
+
+.ban2 .tab li {
+    border-right: 1px solid #aaa;
+    line-height: 12px;
+    /*把lineheight = fontsize,这样border-right 的高度和字体的高度相等*/
+    padding: 0 20px;
+}
+
+.ban2 .tab li:last-child {
+    border-right: none;
+}
+
+.bg2 {
+    background: url(img/index.png) no-repeat 0 9999px;
+}
+
+.more span {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-position: 0 -240px;
+    margin-left: 4px;
+}
+
+.more {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 20px;
+    align-items: center;
+}
+
+.col1 a,
+a.col1 {
+    color: #666;
+}
+
+.cover {
+    background: url(img/coverall.png) no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.rc .cover {
+    background-position: 0 0;
+    width: 140px;
+    height: 140px;
+}
+
+.t-img {
+    width: 140px;
+    height: 140px;
+    border: 1px solid #555;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.t-img .bottom {
+    width: 140px;
+    background: url(img/coverall.png) no-repeat 0 -537px;
+}
+
+.cover .bottom {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    padding: 4px 6px;
+    color: #ccc;
+}
+
+.bottom .icon-Video {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bottom .icon-headphone {
+    cursor: default;
+}
+
+.bottom .icon-Video {
+    cursor: pointer;
+}
+
+.t-img .bottom:hover .icon-Video {
+    color: #fff;
+}
+
+.bottom span {
+    cursor: text;
+}
+
+.bottom .iconfont {
+    font-size: 16px;
+}
+
+.rc-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.new .cover {
+    background-position: 0 -570px;
+    width: 118px;
+    height: 100px;
+}
+
+.wrapbg {
+    background: #f5f5f5;
+    border: 1px solid #d3d3d3;
+}
+
+.new .wrapbg {
+    display: flex;
+    padding: 24px 0 14px 0;
+}
+
+.roll {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.roll .bottom {
+    color: #888;
+    width: 100px;
+    display: none;
+}
+
+.new .inner {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-left: -10px;
+}
+
+.new .icon-arrow-left,
+.new .icon-arrow-right {
+    font-size: 14px;
+    font-weight: bold;
+    width: 50px;
+    margin-top: 44px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    color: #888;
+}
+
+.new .iconfont:hover {
+    color: #000;
+}
+
+.new .item>a {
+    line-height: 18px;
+}
+
+.new .wrapbg .col1 {
+    display: block;
+}
+
+.new {
+    margin: 70px 0 50px 0;
+}
+
+.bill .cover {
+    background-position: -145px -57px;
+}
+
+.bill .topadd {
+    display: flex;
+    padding: 20px;
+}
+
+.topimg {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+}
+
+.topimg>* {
+    width: 100%;
+    height: 100%;
+}
+
+.bill a .iconfont {
+    color: #999;
+    margin-right: 6px;
+}
+
+.bill a:hover .iconfont {
+    color: #000;
+}
+
+.addcontent .iconfont {
+    font-size: 22px;
+    margin-top: 10px;
+    display: inline-block;
+
+}
+
+.bill a:hover {
+    text-decoration: none;
+}
+
+.bill .underline a:hover {
+    text-decoration: underline;
+}
+
+.addcontent {
+    margin: 5px 10px;
+}
+
+.billlist li>a {
+    margin-left: 10px;
+}
+
+.billlist li>span {
+    margin: 0 6px 0 30px;
+}
+
+.billlist li>a:hover {
+    text-decoration: underline;
+}
+
+.billlist li {
+    display: flex;
+}
+
+.liicon {
+    flex: 1;
+    display: none;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.liicon .iconfont {
+    font-size: 12px;
+}
+
+.bill-item {
+    line-height: 34px;
+    border-right: 1px solid #d3d3d3;
+    flex: 1;
+}
+
+.bill .wrapbg {
+    display: flex;
+}
+
+.bill ul li:nth-child(odd) {
+    background: rgb(226, 223, 223);
+}
+
+.bill ul li:last-child a {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.bill-item:last-child {
+    border-right: none;
+}
+
+.bill li:nth-child(-n+3)>span {
+    /*li前三个表示方法*/
+    color: rgb(238, 11, 11);
+}
+
+.ban2 .module {
+    width: 730px;
+    padding: 20px 20px 60px 20px;
+}
+
+.ban2 .side {
+    /* width: 250px; */
+    flex: 1;
+    font-size: 12px;
+}
+
+.side .wrapbg {
+    border-right: none;
+    padding: 14px;
+}
+
+.side .wrapbg a {
+    background: rgb(245, 5, 5);
+    display: block;
+    border-radius: 5px;
+    color: #fff;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+    box-shadow: 0 1px 0 #8a060b;
+    margin: 20px auto 0;
+}
+
+.side .wrapbg a:hover {
+    background: #c90606;
+}
+
+.side .wrapbg a:hover {
+    text-decoration: none;
+}
+
+.tpc {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+}
+
+.sd-content {
+    padding: 14px;
+    border-left: 1px solid #d3d3d3;
+}
+
+.singerlst li {
+    background: #fafafa;
+    margin-bottom: 14px;
+}
+
+.singerlst li:hover {
+    background: rgb(243, 241, 241);
+
+}
+
+.singerlst li a {
+    display: block;
+    display: flex;
+}
+
+.singer a:hover {
+    text-decoration: none;
+}
+
+.singerinfor {
+    display: flex;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-left: none;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 14px;
+}
+
+.singerinfor span:first-child {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.singerinfor span:last-child {
+    color: #666;
+}
+
+.apply {
+    display: block;
+    background: rgb(240, 239, 239);
+    border: 1px solid #999;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 36px;
+}
+
+.apply:hover {
+    background: #e9e6e6;
+}
+
+.anchorlst li {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.icon-v {
+    font-size: 12px;
+    color: red;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 10px;
+}
+
+.info p:last-child {
+    color: #666;
+
+}
+
+.ft {
+    height: 148px;
+    overflow: hidden;
+    border-top: 1px solid #d3d3d3;
+    background: #f2f2f2;
+    font-size: 12px;
+    padding-top: 20px;
+}
+
+.ft .wrap {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ft .abt {
+    display: flex;
+}
+
+.ft .abt li {
+    border-left: 1px solid #ccc;
+    line-height: 14px;
+    height: 14px;
+    padding: 0 14px;
+    margin-bottom: 6px;
+}
+
+.ft .abt li:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.ft .abt li a {
+    color: #999;
+}
+
+.ft a:hover {
+    text-decoration: underline;
+}
+
+.ft p {
+    line-height: 20px;
+    color: #666;
+}
+
+.ft p a {
+    color: #666;
+}
+
+.ft p span {
+    margin-right: 20px;
+}
+
+.ftlogo {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ftlogo li {
+    display: flex;
+    flex-direction: column;
+    width: 60px;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+}
+
+.ftlogo li a {
+    display: block;
+    width: 50px;
+    height: 45px;
+}
+
+.ftbg {
+    background: url(img/foot_enter_new.png) no-repeat;
+    background-size: 110px 450px;
+}
+
+.ftbg2 {
+    background: url(img/foot_enter_tt.png) no-repeat;
+    background-size: 180px 100px;
+    width: 50px;
+    height: 14px;
+}
+
+.ftuser {
+    background-position: -63px -101px;
+}
+
+.ftuser1 {
+    background-position: -1px -91px;
+}
+
+.music {
+    background-position: 0 0;
+}
+
+.music1 {
+    background-position: 0 0;
+}
+
+.reward {
+    background-position: -60px -50px;
+}
+
+.reward1 {
+    background-position: 0 -54px;
+}
+
+.ftlog {
+    background-position: 0 -101px;
+}
+
+.ftlog1 {
+    background-position: -1px -72px;
+}
+
+.ban2 {
+    background: #fff;
+}
+
+.btn-top {
+    width: 49px;
+    height: 44px;
+    position: fixed;
+    display: block;
+    bottom: 190px;
+    left: 50%;
+    margin-left: 500px;
+    background: url(img/sprite.png) no-repeat -265px -47px;
+    cursor: pointer;
+    display: none;
+}
+
+.btn-top:hover {
+    background-position: -325px -47px;
+}
+
+.rc-item a {
+    width: 100%;
+}
+
+.rc-item {
+    width: 140px;
+}
